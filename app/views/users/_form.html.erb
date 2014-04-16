@@ -1,0 +1,21 @@
+<%= render("layouts/errors", :object => @user) %>
+<% form_for(@user) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%=  f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bio %>
+    <%= f.text_field %>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar, "photo" %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="owner">
+    <%= f.label :owner, "Are you a property owner?" %>
+    <%= f.radio_button :owner, "true", :checked => true %>
+    <%= f.radio_button :owner, "false", :checked => false %>
+  </div>
+  <%= f.submit(:class => 'btn btn-primary') %>
+<% end %>
