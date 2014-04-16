@@ -8,4 +8,14 @@ class User < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :bio, :presence => true
+
+   def greeting
+    if Time.now.hour >= 17
+      return "Good Evening"
+    elsif Time.now.hour > 12
+      return "Good Afternoon"
+    else
+      return "Good Morning"
+    end
+  end
 end
