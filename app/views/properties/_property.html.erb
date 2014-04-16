@@ -1,0 +1,8 @@
+<li>
+
+  <div class="strong"><%= link_to "#{property.name}", property.name %></div>
+  <%= link_to "(delete)", property, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+  <br>
+  <br>
+
+</li>
