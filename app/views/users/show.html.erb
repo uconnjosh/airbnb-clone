@@ -2,3 +2,13 @@
 
 
 <h1><%= current_user.greeting %>, &nbsp; <%= current_user.name %></h1>
+<br />
+<br />
+<div class="bio">
+  <h3>Your Bio</h3>
+  <%= current_user.bio %>
+</div>
+
+<div class="avatar">
+  <%= image_tag current_user.avatar.url(:thumb) %>
+</div>

@@ -22,7 +22,7 @@
   <div><%= f.label :owner, "Are you a property owner?" %><i>(leave blank if you don't want to change it)</i><br />
   <%= f.radio_button :owner, "true", :checked => false, autofocus: true %>
   <%= f.label :owner, 'YES', :value => 'true' %> <br>
-  <%= f.radio_button :owner, "false", :checked => true, autofocus: true %>
+  <%= f.radio_button :owner, "false", :checked => false, autofocus: true %>
   <%= f.label :owner, 'NO', :value => 'false' %></div>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

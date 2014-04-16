@@ -5,9 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
-  def after_sign_in_path_for(user)
-    user_path(@user)
-  end
+
 
   protected
 
@@ -15,5 +13,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:name, :bio, :avatar, :owner]
     devise_parameter_sanitizer.for(:account_update) << [:name, :bio, :avatar, :owner]
   end
+
+  def after_sign_in_path_for(user)
+    user_path(@user)
+  end
+
 
 end
