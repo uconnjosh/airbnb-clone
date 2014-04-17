@@ -14,3 +14,14 @@
 .property {
   margin-top: 50px;
 }
+.host {
+  float: right;
+  margin-right: 25%;
+  margin-top: 20%;
+}
+.house {
+  float: left;
+}
+ul.unstyled {
+  list-style-type: none;
+}

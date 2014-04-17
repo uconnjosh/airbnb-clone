@@ -1,0 +1,5 @@
+$('#edit_property_<%= @property.id %>').remove();
+$('#edit_property_link').show();
+$('#prop_name').html('<%= @property.name %>')
+$('#prop_location').html('<%= @property.location %>')
+$('#prop_description').html('<%= @property.description %>')

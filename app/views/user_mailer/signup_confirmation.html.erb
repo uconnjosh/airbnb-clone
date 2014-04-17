@@ -5,4 +5,4 @@
 
 <p><%= @greeting %></p>
 <br />
-<p>Click here to go to your page: <%= user_url(@user) %></p>
+<p>Click here to go to your page: <%= link_to "#{@user.name}'s profile page", user_url(@user) %></p>

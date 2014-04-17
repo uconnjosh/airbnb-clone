@@ -24,6 +24,10 @@ class PropertiesController < ApplicationController
     @user = @property.user
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
   def update
     @property = Property.find(params[:id])
     @property.update(property_params)

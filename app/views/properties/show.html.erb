@@ -1,38 +1,41 @@
 <% content_for(:title, "#Listing: {@property.name} | JANBnB") %>
+<div class="house">
+  <h1 id="prop_name"><%= @property.name %></h1>
 
-<h1><%= @property.name %></h1>
+  <div>
 
-<div>
+    <% if @property.photos != nil %>
+      <ul id="all_photos" class="unstyled">
+        <% @property.photos.each do |photo| %>
+          <li><%= image_tag photo.pic.url(:medium) %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-  <% if @property.photos != nil %>
-    <ul id="all_photos">
-      <% @property.photos.each do |photo| %>
-        <li><%= image_tag photo.pic.url(:medium) %></li>
-      <% end %>
-    </ul>
+  </div>
+
+  <h3 id="prop_location">Location:</h3>
+  <p class="indent"><%= @property.location %></p>
+  <br>
+  <br>
+  <h3 id="prop_description">Description:</h3>
+  <p class="indent"><%= @property.description %></p>
+  <br>
+  <br>
+  <% if @property.user_id == current_user.id %>
+    <%= link_to 'Add Picture', new_property_photo_path(@property), class: 'btn btn-primary', remote: true, id: "new_photo_link" %>
+    <%=  link_to 'Edit Property Details', edit_property_path(@property), class: 'btn btn-primary', remote: true, id: "edit_property_link" %>
   <% end %>
-
 </div>
 
-<h3>Location:</h3>
-<p class="indent"><%= @property.location %></p>
-<br>
-<br>
-<h3>Description:</h3>
-<p class="indent"><%= @property.description %></p>
-<br>
-<br>
+<div class="host">
 <h3>Host:</h3>
 <p><%= image_tag @user.avatar.url(:thumb) %></p>
 <p class="indent">Meet <%= @user.name %></p>
 <p class="indent"><%= @user.bio %></p>
+</div>
 
 <br />
 <br />
-<% if @property.user_id == current_user.id %>
- <jumbotron>
-   <%= link_to 'Add Picture', new_property_photo_path(@property), class: 'btn btn-primary', remote: true, id: "new_photo_link" %>
-
-<% end %>
 
 
