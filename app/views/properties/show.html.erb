@@ -1,1 +1,18 @@
-<h1>Placeholder Property Show Page</h1>
+<% content_for(:title, "#Listing: {@property.name} | JANBnB") %>
+
+<h1><%= @property.name %></h1>
+
+<h3>Location:</h3>
+<p class="indent"><%= @property.location %></p>
+<br>
+<br>
+<h3>Description:</h3>
+<p class="indent"><%= @property.description %></p>
+<br>
+<br>
+<h3>Host:</h3>
+<p><%= image_tag @user.avatar.url(:thumb) %></p>
+<p class="indent">Meet <%= @user.name %></p>
+<p class="indent"><%= @user.bio %></p>
+
+

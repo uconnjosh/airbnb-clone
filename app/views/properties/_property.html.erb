@@ -1,7 +1,7 @@
 
 <li id="property_<%= property.id %>">
 
-  <div class="strong"><%= link_to "#{property.name}", property.name %></div>
+  <div class="strong"><%= link_to "#{property.name}", property_path(property) %></div>
   <%= link_to "(delete)", property, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
   <br>
   <br>
