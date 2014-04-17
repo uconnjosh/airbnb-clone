@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
 
 
   def send_welcome_message
-    UserMailer.signup_confirmation(self)
+    UserMailer.signup_confirmation(self).deliver
   end
 
-   def greeting
+  def greeting
     if Time.now.hour >= 17
       return "Good Evening"
     elsif Time.now.hour > 12
@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
       return "Good Morning"
     end
   end
+
 end

@@ -25,11 +25,11 @@ group :test, :development do
   gem 'faker'
   gem 'capybara'
   gem 'textacular'
-  gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
