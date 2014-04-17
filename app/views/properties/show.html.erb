@@ -6,9 +6,7 @@
 
     <% if @property.photos != nil %>
       <ul id="all_photos" class="unstyled">
-        <% @property.photos.each do |photo| %>
-          <li><%= image_tag photo.pic.url(:medium) %></li>
-        <% end %>
+        <%= render @property.photos %>
       </ul>
     <% end %>
 

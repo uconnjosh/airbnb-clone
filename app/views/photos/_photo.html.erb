@@ -1,8 +1,7 @@
 <li id="photo_<%= photo.id %>">
 
-  <div class="strong">
-    <%= photo.pic %>
-  </div>
-  <%= link_to "(delete)", photo, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+  <%= image_tag photo.pic.url(:thumb) %> <br>
+  <%= photo.caption %> <br>
+  <%= link_to "(delete)", property_photo_path(@property, photo), method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
 
 </li>
