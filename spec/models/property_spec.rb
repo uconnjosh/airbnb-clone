@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Property do
   it { should belong_to :user}
+  it { should have_many :photos}
 
   it { should validate_presence_of :name}
   it { should validate_presence_of :description}

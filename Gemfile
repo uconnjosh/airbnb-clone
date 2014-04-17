@@ -7,9 +7,10 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'paperclip'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'bcrypt'
 gem 'devise'
+gem 'gs'
 
 
 group :development do

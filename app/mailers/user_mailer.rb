@@ -16,7 +16,4 @@ class UserMailer < ActionMailer::Base
     end
   end
 
-  # def send_confirmation(user)
-  #   signup_confirmation(user).deliver
-  # end
 end

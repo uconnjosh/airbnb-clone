@@ -13,10 +13,4 @@ describe User do
     should validate_uniqueness_of :email
   end
 
-  # it 'sends a welcome email' do
-  #   user = User.new(:name => "Bailey", :bio => "great gal", :owner => true, :email => 'mac@chs.com', :password => 'password', :password_confirmation => 'password')
-  #   expect(UserMailer).to receive(:send_confirmation).with(user)
-  #   user.save
-  # end
-
 end
