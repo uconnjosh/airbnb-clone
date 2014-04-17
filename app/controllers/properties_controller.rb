@@ -25,6 +25,19 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
+    @property.update(property_params)
+    respond_to do |format|
+      format.html { redirect_to property_url(@property) }
+      format.js
+    end
+  end
+
+  def destroy
+    @property = Property.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to user_url(current_user) }
+      format.js
+    end
   end
 
 private
