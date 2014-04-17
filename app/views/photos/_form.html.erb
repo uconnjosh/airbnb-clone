@@ -1,0 +1,16 @@
+<%= render "layouts/errors", :object => @photo %>
+
+<%= form_for [@property, @photo], remote: true, authenticity_token: true, :html => { :multipart => true } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :caption %>
+    <%= f.text_field :caption %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pic, "Select a photo" %>
+    <%= f.file_field :pic %>
+  </div>
+
+  <%= f.submit(:class => 'btn btn-primary') %>
+
+<% end %>

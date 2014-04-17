@@ -2,6 +2,18 @@
 
 <h1><%= @property.name %></h1>
 
+<div>
+
+  <% if @property.photos != nil %>
+    <ul id="all_photos">
+      <% @property.photos.each do |photo| %>
+        <li><%= image_tag photo.pic.url(:medium) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>
+
 <h3>Location:</h3>
 <p class="indent"><%= @property.location %></p>
 <br>
@@ -14,5 +26,13 @@
 <p><%= image_tag @user.avatar.url(:thumb) %></p>
 <p class="indent">Meet <%= @user.name %></p>
 <p class="indent"><%= @user.bio %></p>
+
+<br />
+<br />
+<% if @property.user_id == current_user.id %>
+ <jumbotron>
+   <%= link_to 'Add Picture', new_property_photo_path(@property), class: 'btn btn-primary', remote: true, id: "new_photo_link" %>
+
+<% end %>
 
 
